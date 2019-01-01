@@ -1,8 +1,32 @@
 body {
-  background-image: ".images/ZinCharleston.jpg";
+ 
+    background: url("../images/IMG_5459.jpg");
+    background-size: cover;
+    image-orientation: 90deg;
+  
 }
 
 #picture {
   width: 20%;
   height: 20%;
 }
+.performers {
+  align: center;
+  background: rgb(243, 57, 10);
+}
+#favorites {
+  align-items: right;
+  color: aliceblue;
+  background: blueviolet;
+}
+.container mt-6 mb-2{
+  padding: 4%;
+  color: blueviolet;
+  align-self: center;
+}
+ .navbar {
+  float: bottom;
+  color: white;
+  align-self: center;
+  background: blueviolet;
+} 

@@ -1,5 +1,5 @@
 
-var artist="";
+var artist= [];
 
 // Event listener for all button elements
 $("button").on("click", function () {
@@ -28,7 +28,7 @@ $("button").on("click", function () {
         if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
           // Creating a div for the gif
           var gifDiv = $("<div>");
-          var artistImage = $("button").attr("src", response.thumb_url);
+          var artistImage = $("button").attr("src", results[i].images.fixed_height.url);
           var rating = results[i].rating;
           var p = $("<p>").text("Rating: " + rating);
           
