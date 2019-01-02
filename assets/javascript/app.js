@@ -39,7 +39,7 @@ $("button").on("click", function () {
           gifDiv.append(p);
           gifDiv.append(artistImage);
 
-
+          $("row").prepend(gifDiv);
           $("#gifs-appear-here").prepend(gifDiv);
         }
       }

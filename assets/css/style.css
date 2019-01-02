@@ -1,17 +1,19 @@
 body {
- 
-    background: url("../images/IMG_5459.jpg");
-    background-position: rotate(90deg);
-    background-size: cover;
-    image-orientation: 90deg;
-  
+  background: url("../images/IMG_5457.jpg");
+  background-image: rotate 90%;
+  background-size: cover;
+    
 }
 
+.fixed-top {
+  position: sticky;
+}
 #picture {
   width: 20%;
   height: 20%;
 }
 .performers {
+  position: sticky;
   align-self: center;
   background: rgb(243, 57, 10);
   align-content: center;
