@@ -1,6 +1,7 @@
 body {
  
     background: url("../images/IMG_5459.jpg");
+    background-position: rotate(90deg);
     background-size: cover;
     image-orientation: 90deg;
   
@@ -11,22 +12,32 @@ body {
   height: 20%;
 }
 .performers {
-  align: center;
+  align-self: center;
   background: rgb(243, 57, 10);
+  align-content: center;
 }
 #favorites {
   align-items: right;
   color: aliceblue;
   background: blueviolet;
+  text-align: right;
+  
 }
 .container mt-6 mb-2{
   padding: 4%;
   color: blueviolet;
   align-self: center;
 }
- .navbar {
-  float: bottom;
+ .fixed-bottom {
+  position: absolute;
+  width: 100%;
+  bottom: 8px;
+  left: 16px;
+  font-size: 18px;
   color: white;
   align-self: center;
   background: blueviolet;
-} 
+  text-align: center;
+}
+
+ 

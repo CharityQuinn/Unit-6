@@ -19,6 +19,7 @@ $("button").on("click", function () {
     })
     // After the data comes back from the API
     .then(function (response) {
+      event.preventDefault();
       // Storing an array of results in the results variable
       var results = response.data;
         console.log("This is the response " + results);
@@ -28,11 +29,12 @@ $("button").on("click", function () {
         if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
           // Creating a div for the gif
           var gifDiv = $("<div>");
+          var artistImage = $("<img>");
           var artistImage = $("button").attr("src", results[i].images.fixed_height.url);
           var rating = results[i].rating;
           var p = $("<p>").text("Rating: " + rating);
           
-          //animalImage.attr("src", results[i].images.fixed_height.url);
+         
 
 
           gifDiv.append(p);
