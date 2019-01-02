@@ -1,9 +1,11 @@
+
 body {
   background: url("../images/IMG_5457.jpg");
-  background-image: rotate 90%;
-  background-size: cover;
-    
+   background-size: cover;
+  background: transform: rotate(33deg) translateY(-100%);
+  transform-origin:top left;
 }
+
 
 .fixed-top {
   position: sticky;
@@ -23,6 +25,14 @@ body {
   color: aliceblue;
   background: blueviolet;
   text-align: right;
+  
+}
+
+.search {
+  align-items: center;
+  color: white;
+  background: blueviolet;
+  text-align: center;
   
 }
 .container mt-6 mb-2{
