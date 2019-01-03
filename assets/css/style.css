@@ -1,13 +1,16 @@
 
-body {
-  background: url("../images/IMG_5457.jpg");
-   background-size: cover;
-  background:
-    
-    transform: rotate(90deg);
-  transform-origin:top left;
+.bg {
+  backgound height: 100%;
+  /* Full height */
+  
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-style="transform:rotate(90deg);"
+
+
 
 .fixed-top {
   position: sticky;

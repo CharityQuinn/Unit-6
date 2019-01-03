@@ -64,8 +64,8 @@ $(document).ready(function () {
             artistImage.addClass("image");
 
             artistDiv.append(p);
-            artistDiv.append(artistImage);
-            $("#gifs-appear-here").append(artistDiv);
+            artistDiv.prepend(artistImage);
+            $("#gifs-appear-here").prepend(artistDiv);
           }
         });
       });
