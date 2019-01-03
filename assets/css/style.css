@@ -2,10 +2,12 @@
 body {
   background: url("../images/IMG_5457.jpg");
    background-size: cover;
-  background: transform: rotate(33deg) translateY(-100%);
+  background:
+    
+    transform: rotate(90deg);
   transform-origin:top left;
 }
-
+style="transform:rotate(90deg);"
 
 .fixed-top {
   position: sticky;
@@ -28,7 +30,7 @@ body {
   
 }
 
-.search {
+#search {
   align-items: center;
   color: white;
   background: blueviolet;

@@ -18,7 +18,7 @@ $("button").on("click", function () {
     })
     // After the data comes back from the API
     .then(function (response) {
-      // event.preventDefault();
+     
       // Storing an array of results in the results variable
       var results = response.data;
         console.log("This is the response " + results);
@@ -32,6 +32,19 @@ $("button").on("click", function () {
           artistImage.attr("src", results[i].images.fixed_height.url);
           var rating = results[i].rating;
           var p = $("<p>").text("Rating: " + rating);
+         
+          var artImage = $("<img>");
+          artImage.attr("data-still", results[i].images.original_still.url);
+          artImage.attr("data-animate", results[i].images.fixed_height.url);
+          artImage.attr("data-state", "still");
+          artImage.css("width", 150);
+          artImage.css("height", 150);
+          artImage.attr("src", results[i].images.original_still.url);
+          artImage.on("click", animate);
+          artImage.append(artistImage);
+          
+          gifDiv.append(imgContainer);
+          
           
          
 
@@ -45,3 +58,4 @@ $("button").on("click", function () {
       }
     });
 });
+
