@@ -1,61 +1,84 @@
+$(document).ready(function () {
+      var artist = ["John Lennon", "Sofie Tukker", "Foster The People", "AJR"];
 
-var artist= [];
-
-// Event listener for all button elements
-$("button").on("click", function () {
-
-  event.preventDefault();
-  // In this case, the "this" keyword refers to the button that was clicked
-  var artist = $(this).attr("data-images");
-  console.log("The artist variable is " + artist);
-  
-  var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=OV0hMh6VJXv7nMMPfnB2nnoUIj0JOWW6&q=" + artist + "&limit=10&offset=0&rating=G&lang=en";
-  
-    // Performing our AJAX GET request
-  $.ajax({
-      url: queryURL,
-      method: "GET"
-    })
-    // After the data comes back from the API
-    .then(function (response) {
-     
-      // Storing an array of results in the results variable
-      var results = response.data;
-        console.log("This is the response " + results);
-        for (var i = 0; i < results.length; i++) {
-                   
-        // Only taking action if the photo has an appropriate rating
-        if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-          // Creating a div for the gif
-          var gifDiv = $("<div>");
-          var artistImage = $("<img>");
-          artistImage.attr("src", results[i].images.fixed_height.url);
-          var rating = results[i].rating;
-          var p = $("<p>").text("Rating: " + rating);
-         
-          var artImage = $("<img>");
-          artImage.attr("data-still", results[i].images.original_still.url);
-          artImage.attr("data-animate", results[i].images.fixed_height.url);
-          artImage.attr("data-state", "still");
-          artImage.css("width", 150);
-          artImage.css("height", 150);
-          artImage.attr("src", results[i].images.original_still.url);
-          artImage.on("click", animate);
-          artImage.append(artistImage);
-          
-          gifDiv.append(imgContainer);
-          
-          
-         
+      function renderButtons() {
 
 
-          gifDiv.append(p);
-          gifDiv.append(artistImage);
+        $(".performers").empty();
 
-          $("row").prepend(gifDiv);
-          $("#gifs-appear-here").prepend(gifDiv);
+
+        for (var i = 0; i < artist.length; i++) {
+
+          var a = $("<button>");
+
+          a.addClass("gif-btn");
+
+          a.attr("data-name", artist[i]);
+
+          a.text(artist[i]);
+          $(".performers").append(a);
         }
       }
-    });
-});
 
+      $("#button").on("click", function (event) {
+        event.preventDefault();
+
+        var gifInput = $("#gif-input").val().trim();
+
+        artist.push(gifInput);
+
+        $("#gif-input").val("")
+        renderButtons();
+
+
+      });
+
+      renderButtons();
+      $(document.body).on("click", ".gif-btn", function () {
+        console.log(this);
+        var artist1 = $(this).attr("data-name");
+
+        var queryURL = "https://api.giphy.com/v1/gifs/search?" +
+          "api_key=QqAT80q1iqn6a6N232lBJvRK9I7zNL9J" + "&q=" + artist1 +
+          "&limit=10&offset=0&lang=en";;
+
+        //Performing our AJAX GET request
+        $.ajax({
+          url: queryURL,
+          method: "GET"
+        }).then(function (response) {
+
+          // Storing an array of results in the results variable
+          var results = response.data;
+          console.log("These are the results " + results);
+
+          for (var i = 0; i < results.length; i++) {
+            var artistDiv = $("<div class=artist>");
+
+            var p = $("<p>").text("Rating: " + results[i].rating);
+
+            var artistImage = $("<img>").attr("src", results[i].images.fixed_height_still.url);
+            artistImage.attr("data-still", results[i].images.fixed_height_still.url);
+            artistImage.attr("data-animate", results[i].images.fixed_height.url);
+            artistImage.attr("data-state", "still");
+            artistImage.addClass("image");
+
+            artistDiv.append(p);
+            artistDiv.append(artistImage);
+            $("#gifs-appear-here").append(artistDiv);
+          }
+        });
+      });
+      $(document.body).on("click", "img", function () {
+          var state = $(this).attr("data-state");
+          if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+          } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+          }
+        });
+    
+     
+      });

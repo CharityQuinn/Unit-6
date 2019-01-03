@@ -37,6 +37,12 @@ style="transform:rotate(90deg);"
   text-align: center;
   
 }
+
+#button {
+  width: 100px;
+  height: 20px;
+}
+
 .container mt-6 mb-2{
   padding: 4%;
   color: blueviolet;
