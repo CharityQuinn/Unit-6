@@ -79,6 +79,10 @@ $(document).ready(function () {
             $(this).attr("data-state", "still");
           }
         });
-    
-     
+        if ()
+        $(document.body).on("click", ".#favArray", function () {
+          var favoriteBand = [];
+          favoriteBand.append($(this).attr("data-name"));
+          $("#bandLike").append(favoriteBand);
+
       });
