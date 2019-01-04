@@ -80,21 +80,23 @@ $(document).ready(function () {
       });
 
     })
-    var el = document.getElementById('#bandLike');
-    if (el) {
-      el.addEventListener('click', favoriteBand, false);
-      console.log("About to get a click from favArray");
-      var band = document.getElementById("#favArray");
-      band.onclick = favoriteBand(); 
+    // var el = document.getElementById('#bandLike');
+    // if (el) {
+    //   el.addEventListener('click', favoriteBand, false);
+    //   console.log("About to get a click from favArray");
+    //   var band = document.getElementById("#favArray");
+    //   band.onclick = favoriteBand(); 
 
+   
         function favoriteBand() {
+          console.log("Arrive in favoriteBand");
           var arrayFav = [];
           ($(this).attr("data-name"));
           console.log("This is this in favorites " + this);
           $("#bandLike").append(arrayFav);
           document.getElementById("#bandLike").innerHTML = arrayFav.join(" ");
 
-        }
+        // }
 
       }
     
