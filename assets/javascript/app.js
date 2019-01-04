@@ -1,3 +1,5 @@
+var artist1 = "";
+
 $(document).ready(function () {
       var artist = ["John Lennon", "Sofie Tukker", "Foster The People", "AJR"];
 
@@ -35,7 +37,7 @@ $(document).ready(function () {
       renderButtons();
       $(document.body).on("click", ".gif-btn", function () {
         console.log(this);
-        var artist1 = $(this).attr("data-name");
+        artist1 = $(this).attr("data-name");
 
         var queryURL = "https://api.giphy.com/v1/gifs/search?" +
           "api_key=QqAT80q1iqn6a6N232lBJvRK9I7zNL9J" + "&q=" + artist1 +
@@ -61,6 +63,8 @@ $(document).ready(function () {
             artistImage.attr("data-animate", results[i].images.fixed_height.url);
             artistImage.attr("data-state", "still");
             artistImage.addClass("image");
+            
+            myFunction(artist1);
 
             artistDiv.append(p);
             artistDiv.prepend(artistImage);
@@ -78,27 +82,29 @@ $(document).ready(function () {
           $(this).attr("data-state", "still");
         }
       });
-
+      
+})
       // var el = document.getElementById('#bandLike');
       // if (el) {
-        //   el.addEventListener('click', favoriteBand, false);
-        //   console.log("About to get a click from favArray");
-        //   var band = document.getElementById("#favArray");
-        //   band.onclick = favoriteBand(); 
-        var test = document.getElementById('favorites');
-        document.getElementById("favorites").addEventListener("click", myFunction());
-        
-        
-        function myFunction() {
-          console.log("Arrive in favoriteBand");
+      //   el.addEventListener('click', favoriteBand, false);
+      //   console.log("About to get a click from favArray");
+      //   var band = document.getElementById("#favArray");
+      //   band.onclick = favoriteBand(); 
+      var test = document.getElementById('favorites');
+      test.addEventListener("click", myFunction());
+
+      document.getElementById("favorites").addEventListener("click", myFunction());
+
+
+      function myFunction() {
+        console.log("Arrive in favoriteBand");
+        if (test) {
           var arrayFav = [];
-          ($(this).attr("data-name"));
-          console.log("This is this in favorites " + this);
+          //($().attr("data-name"));
+          console.log("This is this in favorites " + test);
           $("#bandLike").append(arrayFav);
-          document.getElementById("#bandLike").innerHTML = arrayFav.join(" ");
-          
+          document.getElementById("#bandLike").innerHTML = arrayFav.join();
+
         }
-        
-      })
-      // }
-    
+
+      }
