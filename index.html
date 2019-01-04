@@ -9,39 +9,48 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <title>GIPHY Homework</title>
 </head>
+
 <body background="assets/images/img(20).jpg">
 
-  
-  
+
+
   <div class="fixed-top"></div>
   <div class="performers" col-12 r-1>
-   
+
   </div>
-  
 
-<div id="search" col-6> 
+
+  <div id="search" col-6>
     <form id="gif-form">
-        <label for="gif-input">Search for a band: </label>
-        <br>
-        <input type="text" id="gif-input">
-        <br>
+      <label for="gif-input">Search for a band: </label>
+      <br>
+      <input type="text" id="gif-input">
+      <br>
 
-        <input id="button" type="submit" value="Submit">
+      <input id="button" type="submit" value="Submit">
     </form>
 
-</div>
+  </div>
 
   <div id="favorites" col-6>
-      <div id="favorites">Click here for Favorite</div>
-      
-<script>
+    <div id="favorites">Click here for Favorite</div>
+
+    <!-- <script>
       var test = document.getElementById('favorites');
-      test.onclick = favoriteBand() {
-          console.log('Hello');
-        }
-        </script>
-      
-      <!-- <form>
+      document.getElementById("favorites").addEventListener("click", myFunction());
+
+      // function myFunction() {
+      //   document.getElementById("favorites").innerHTML = "YOU CLICKED ME!";
+      //   console.log("Arrive in myFunction");
+      //   var arrayFav = [];
+      //   ($(this).attr("data-name"));
+      //   console.log("This is this in favorites " + this);
+      //   $("#bandLike").append(arrayFav);
+      //   document.getElementById("#favorites").innerHTML = arrayFav.join(" ");
+      // }
+    </script> -->
+
+    <!-- <form>
       <h3>Favorites: </h3>
          <button onclick="favoriteBand()">Add Favorite</button>
       <span id ="bandLike"></span>
@@ -61,7 +70,7 @@
     </div>
   </div>
 
-  
+
   <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
