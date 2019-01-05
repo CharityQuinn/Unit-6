@@ -26,11 +26,10 @@
   align-content: center;
 }
 #favorites {
-  align-items: right;
+  text-align: right;
   color: aliceblue;
   background: blueviolet;
-  text-align: right;
-  
+ 
 }
 
 #search {
