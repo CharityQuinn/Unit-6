@@ -64,13 +64,13 @@ $(document).ready(function () {
         artistImage.attr("data-state", "still");
         artistImage.addClass("image");
 
-        // myFunction(artist1);
+        
 
         artistDiv.append(p);
         artistDiv.prepend(artistImage);
         $("#gifs-appear-here").prepend(artistDiv);
         myFunction(artist1);
-        console.log("Sending the artist name to myFunciton " + artist1);
+       
       }
     });
   });
@@ -87,34 +87,24 @@ $(document).ready(function () {
 
 })
 var bull = false;
-// var test = document.getElementById('favButton');
-// test.addEventListener("click", myFunction());
+
 $("#favButton").on("click", function() {
   bull = true
-  myFunction();
-    
+  console.log("This is favButton clicked if bull is true " + bull);
+  myFunction(bull);
+  
 });
 
 
-
-
-// var el = document.getElementById('#favorites');
-// if (el) {
-//   el.addEventListener('click', myFunction, false);
-//   console.log("About to get a click for favArray");
-//   el.onclick = myFunction();
-//   el.addEventListener("click", myFunction());
-//   document.getElementById("favorites").addEventListener("click", myFunction());
-// }
-console.log("This is favButton clicked if bull is true " + bull);
-
 function myFunction() {
-  if(bull === true) {
+  if(bull) {
+    console.log("The value of bull is "+ bull);
     var arrayFav = [];
-    console.log("This was received by myFunction " + this);
-    $("#favorites").append(this);
+    console.log("This was received by myFunction " + artist1);
+    $("#favorites").append(artist1);
+    $("#favorites").append(" | ");
     console.log("This is the array of favorite bands " + arrayFav);
-  
+  bull= false;
   }
   
 }
