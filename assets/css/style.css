@@ -1,9 +1,8 @@
 
 .bg {
+  /* Full height */
   background-position-y: 100%;
-    /* Full height */
   
-
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
@@ -24,6 +23,7 @@
   align-self: center;
   background: rgb(243, 57, 10);
   align-content: center;
+  padding: 10px;
 }
 #favorites {
   text-align: right;
@@ -37,12 +37,15 @@
   color: white;
   background: blueviolet;
   text-align: center;
+  margin-top: 5px;
   
 }
 
 #button {
   width: 100px;
   height: 20px;
+margin-top: 5px;
+
 }
 
 .container mt-6 mb-2{
@@ -61,5 +64,6 @@
   background: blueviolet;
   text-align: center;
 }
+
 
  
