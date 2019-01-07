@@ -52,7 +52,7 @@ $(document).ready(function () {
       // Storing an array of results in the results variable
       var results = response.data;
 
-
+    
       for (var i = 0; i < results.length; i++) {
         var artistDiv = $("<div class=artist>");
 
