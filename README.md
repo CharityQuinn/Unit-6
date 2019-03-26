@@ -15,5 +15,5 @@ I will maintain this project but it is only here with the tremendous help from c
 [Band Request]![image](https://user-images.githubusercontent.com/44899945/55006528-46ad9780-4fb4-11e9-9994-00a4d409ba87.png)
 <br>
 
-[Request Completed](https://gyazo.com/29203fe8c8249a1d5244909dcab6199f)
+[Request Completed]![image](https://user-images.githubusercontent.com/44899945/55006689-87a5ac00-4fb4-11e9-898c-7dac2d31e14f.png)
 
